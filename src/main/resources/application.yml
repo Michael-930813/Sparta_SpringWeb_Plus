@@ -1,0 +1,21 @@
+spring:
+  config:
+    import: file:${user.dir}/.env[.properties]
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+
+## JWT SECRET KEY
+jwt:
+  secret:
+    key: ${JWT_SECRET_KEY}
